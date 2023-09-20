@@ -1,17 +1,17 @@
 //cargo en un arreglo las imganes de las banderas. Este sera el orden que se mostrarán
-let banderas = ["mx.png", "br.png", "ar.png", "gb.svg", "na.svg"];
+let banderas = ["mx.png", "br.png", "ar.png", "kr.png", "de.png"];
 
 //arreglo que guardara la opcion correcta
-let correcta = [2,1,0,1,0];
+let correcta = [2,1,0,2,1];
 
 //arreglo que guardara los paises a mostrar en cada jugada
 let opciones = [];
 //cargo en el arreglo opciones las opciones a mostrar en cada jugada
-opciones.push(["SUDAFRICA", "SINGAPUR", "MEXICO"]);
+opciones.push(["ESCOCIA", "SINGAPUR", "MEXICO"]);
 opciones.push(["ESPAÑA", "BRASIL", "BOLIVIA"]);
-opciones.push(["ARGENTINA", "ANDORRA", "ANTIGUA Y BARBUDA"]);
-opciones.push(["UCRANIA", "REINO UNIDO", "MADAGASCAR"]);
-opciones.push(["NAMIBIA", "OMAN", "ETIOPIA"]);
+opciones.push(["ARGENTINA", "ANDORRA", "GALES"]);
+opciones.push(["CANADA", "REINO UNIDO", "COREA DEL SUR"]);
+opciones.push(["HONDURAS", "ALEMANIA", "CHINA"]);
 
 //variable que guarda la posicion actual
 let posActual = 0;
@@ -31,6 +31,15 @@ function comenzarJuego(){
 
 //funcion que carga la siguiente bandera y sus opciones
 function cargarBandera(){
+   var i=5;
+  if(i!=0){
+    setInterval(function (){
+        $("#stopWatch").html(i);
+        i--;
+    });
+  }else{
+
+  }
     //controlo sis se acabaron las banderas
     if(banderas.length <= posActual){
         terminarJuego();
@@ -44,6 +53,7 @@ function cargarBandera(){
         document.getElementById("n1").innerHTML = opciones[posActual][1];
         document.getElementById("n2").innerHTML = opciones[posActual][2];
     }
+  
 }
 
 function limpiarOpciones(){
@@ -90,3 +100,6 @@ function volverAlInicio(){
     document.getElementById("pantalla-inicial").style.display = "block";
     document.getElementById("pantalla-juego").style.display = "none";
 }
+
+
+
