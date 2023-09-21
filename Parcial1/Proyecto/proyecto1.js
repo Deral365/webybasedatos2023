@@ -1,8 +1,8 @@
 //cargo en un arreglo las imganes de las banderas. Este sera el orden que se mostrarán
-let banderas = ["mx.png", "br.png", "ar.png", "kr.png", "de.png"];
+let banderas = ["mx.png", "br.png", "ar.png"];
 
 //arreglo que guardara la opcion correcta
-let correcta = [2,1,0,2,1];
+let correcta = [2,1,0];
 
 //arreglo que guardara los paises a mostrar en cada jugada
 let opciones = [];
@@ -10,8 +10,7 @@ let opciones = [];
 opciones.push(["ESCOCIA", "SINGAPUR", "MEXICO"]);
 opciones.push(["ESPAÑA", "BRASIL", "BOLIVIA"]);
 opciones.push(["ARGENTINA", "ANDORRA", "GALES"]);
-opciones.push(["CANADA", "REINO UNIDO", "COREA DEL SUR"]);
-opciones.push(["HONDURAS", "ALEMANIA", "CHINA"]);
+
 
 //variable que guarda la posicion actual
 let posActual = 0;
@@ -31,15 +30,9 @@ function comenzarJuego(){
 
 //funcion que carga la siguiente bandera y sus opciones
 function cargarBandera(){
-   var i=5;
-  if(i!=0){
-    setInterval(function (){
-        $("#stopWatch").html(i);
-        i--;
-    });
-  }else{
-
-  }
+    $("#pregunta1").attr("visibility","visible") 
+    $("#pregunta2").attr("visibility","visible") 
+    $("#pregunta3").attr("visibility","visible") 
     //controlo sis se acabaron las banderas
     if(banderas.length <= posActual){
         terminarJuego();
@@ -67,6 +60,19 @@ function limpiarOpciones(){
 }
 
 function comprobarRespuesta(opElegida){
+    console.log(opElegida)
+    if (opElegida==undefined) {
+        opElegida=3
+        console.log("fkjshf")
+        document.getElementById("n" + opElegida).className = "nombre nombreNoAcertada";
+        document.getElementById("l" + opElegida).className = "letra letraNoAcertada";
+
+        //opcion que era correcta
+        document.getElementById("n" + correcta[posActual]).className = "nombre nombreAcertada";
+        document.getElementById("l" + correcta[posActual]).className = "letra letraAcertada";
+        setTimeout(cargarBandera,1000);
+        return;
+    }
     if(opElegida==correcta[posActual]){//acertó
         //agregamos las clases para colocar el color verde a la opcion elegida
         document.getElementById("n" + opElegida).className = "nombre nombreAcertada";
@@ -85,6 +91,18 @@ function comprobarRespuesta(opElegida){
     //Esperamos 1 segundo y pasamos mostrar la siguiente bandera y sus opciones
     setTimeout(cargarBandera,1000);
 }
+
+var i= 5;
+setInterval(function(){
+    if (i==0) {
+        i=5
+        alert("termino")
+        setTimeout(comprobarRespuesta,1000);
+    }
+    i--;
+},1000);
+
+
 function terminarJuego(){
     //ocultamos las pantallas y mostramos la pantalla final
     document.getElementById("pantalla-juego").style.display = "none";
