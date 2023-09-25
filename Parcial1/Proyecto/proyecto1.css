@@ -5,13 +5,13 @@
     color: #fff;
   
 }
-body{
+    body{
     background: url(fotos/fondo.jpg);
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
 }
-h1{
+    h1{
     width: fit-content;
     background-color: #01ac29;
     margin: 40px auto;
@@ -19,7 +19,7 @@ h1{
     box-shadow: 5px 5px 0 #000;
     padding: 20px 30px;
 }
-footer{
+    footer{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -32,16 +32,15 @@ footer{
     text-align: center;
 }
 
-/* PANTALLA INICIO */
-#pantalla-inicial{
+    #pantalla-inicial{
     display: block;
     text-align: center;
     font-size: 30px;
 }
-#pantalla-inicial{
+    #pantalla-inicial{
     margin: 60px 0;
 }
-.btn{
+    .btn{
     border: none;
     background: #03779e;
     color: #fff;
@@ -50,26 +49,23 @@ footer{
     cursor: pointer;
     transition: .5s;
 }
-.btn:hover{
+    .btn:hover{
     transform: scale(1.1);
 }
 
-
-
-/* PANTALLA juego */
-#pantalla-juego{
+    #pantalla-juego{
     display: none;
 }
-.pantalla-juego{
+    .pantalla-juego{
     max-width: 800px;
     margin: 50px auto;
     text-align: center;
 }
-.pantalla-juego img{
+    .pantalla-juego img{
     max-width: 400px;
     width: 100%;
 }
-.opciones{
+    .opciones{
     max-width: 400px;
     margin: auto;
 }
@@ -104,7 +100,7 @@ footer{
     border-radius: 0 20px 20px 0;
     padding: 7px 0 7px 30px;
 }
-/* clases que se aplicará cuando haya acertada la opcion  */
+
 .opcion .nombreAcertada{
     background-color: yellowgreen;
     color: #fff;
@@ -113,7 +109,7 @@ footer{
     background-color: yellowgreen;
     color: #fff ;
 }
-/* clases que se aplicaran cuando se equivoque en la opcion elegida */
+
 .opcion .nombreNoAcertada{
     background-color: darkred;
     color: #fff;
@@ -122,11 +118,6 @@ footer{
     background-color: darkred;
     color: #fff;
 }
-
-
-
-
-/* PANTALLA final */
 #pantalla-final{
     display: none;
     text-align: center;
