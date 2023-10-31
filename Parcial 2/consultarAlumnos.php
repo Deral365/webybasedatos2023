@@ -46,7 +46,7 @@
                
                     <td>
                   <a href="" class="btn btn-sm btn-primary"> Editar </a>
-                  <a href="" class="btn btn-sm btn-primary"> Eliminar </a>
+                  <a href="eliminarAlumno.php? id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-primary"> Eliminar </a>
                    </td>
                  </tr>
                <?php } ?>
