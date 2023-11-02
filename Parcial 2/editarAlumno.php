@@ -11,31 +11,30 @@
         include 'conexion.php';
 
         $id = $_GET['id'];
-        $sql = "SELECT * FROM alumnos";
+        $sql = "SELECT * FROM alumnos WHERE id=".$id;
         $datos = $conexion -> query($sql);
         $alumno = $datos->fetch_assoc();
     ?>
  <div class="container">
         <div class="row">
-            <div class="col-12">
-              <form action="" method="POST"></form>
-              <div class="form-group" requiered>
+          <h2>Registrar alumno</h2>
+            <div class="col-12 card m-4 p-4">
+              <form action="actualizarRegistro.php" method="POST"></form>
+              <input type="hidden" name="id" value=""<?php echo $alumno["id"];?> >
+              <div class="form-group">
                 <label for="">Nombre:</label>
-                <input  name="nc" type="text" class="form-control" placeholder="Teclea el nombre">
+                <input  name="nombre" type="text" <?php echo $alumno["nombre"];?> class="form-control" placeholder="Teclea el nombre" requiered>
               </div>
               <div class="form-group" requiered>
                 <label for="">Numero de control:</label>
-                <input  name="nc" type="text" class="form-control" placeholder="Teclea el numero de control">
-              </div>
+                ="nombre" type="text" <?php echo $alumno["nombre"];?> class="form-control" placeholder="Teclea el nombre" requiered>
               <div class="form-group" requiered>
                 <label for="">Semestre:</label>
-                <input  name="semestre" type="number" class="form-control" placeholder="Teclea el semestre">
-
+                ="nombre" type="text" <?php echo $alumno["nombre"];?> class="form-control" placeholder="Teclea el nombre" requiered>
               </div>
               <div class="form-group" requiered>
                 <label for="">Edad:</label>
-                <input  name="edad" type="number" class="form-control" placeholder="Teclea la edad">
-
+                ="nombre" type="text" <?php echo $alumno["nombre"];?> class="form-control" placeholder="Teclea el nombre" requiered>
               </div>
               <div class="form-group" requiered>
                 <label for="">Turno:</label>
