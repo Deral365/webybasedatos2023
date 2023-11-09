@@ -2,13 +2,13 @@
 
 $server = "localhost";
 $user = "root";
-$password = "123456";
+$password = "";
 $basededatos="cetis107";
 
 $conexion = new mysqli($server,$user,$password,$basededatos);
 
 
-if($conexion->conect_error){
+if($conexion->connect_error){
     die("Fallo la conexion" .$conexion->connect_error);
 }
 

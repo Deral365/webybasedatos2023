@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materias</title>
-    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <script src="code.jquery.com_jquery-3.7.1.js"></script>
 </head>
 <body>
 <?php 
         include 'menu.php'; 
         include 'conexion.php'; 
         //Recuperamos los datos de la base de datos 
-        $sql = "SELECT * FROM alumnos";
+        $sql = "SELECT * FROM materias";
         $datos = $conexion->query($sql);
 
     ?>    
@@ -45,8 +46,8 @@
                                   
                                     <td><?php echo $registro["especialidad"]; ?></td>
                                     <td>
-                                        <a href="editarAlumno.php?id=<?php echo $registro["id"]; ?>"  class="btn btn-sm btn-primary">Editar</a>
-                                        <a href="eliminarAlumno.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
+                                        <a href="editarMaterias.php?id=<?php echo $registro["id"]; ?>"  class="btn btn-sm btn-primary">Editar</a>
+                                        <a href="Eliminarmateria.php?id=<?php echo $registro["id"]; ?>" class="btn btn-sm btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php } ?>
